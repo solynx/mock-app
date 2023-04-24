@@ -11,9 +11,9 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18]
+        node-version: [17]
     steps:
-      - name: Checkout 🛎️
+      - name: Checkout
         uses: actions/checkout@v3
 
       - name: Use Node.js ${{ matrix.node-version }}
@@ -23,6 +23,7 @@ jobs:
 
       - name: Install & Generate 🔧
         run: |
+          npm
           npm install
           npm run generate
         env:
@@ -31,4 +32,4 @@ jobs:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist
+          publish_dir: ./dist
