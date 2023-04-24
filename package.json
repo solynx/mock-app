@@ -1,7 +1,7 @@
 {
   "private": true,
   "scripts": {
-    "deploy": "nuxt generate && gh-pages -d dist",
+    "deploy": "nuxt generate && touch .output/public/.nojekyll && gh-pages --dotfiles -d .output/public",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
