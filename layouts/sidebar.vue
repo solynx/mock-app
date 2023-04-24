@@ -51,10 +51,10 @@ import { useURIStore } from "~/stores/test";
 const message = useMessage();
 const dialog = useDialog();
 const placement = "bottom-right";
-const { data: sidebarList } = await useFetch(
-  "http://127.0.0.1:8000/admin/collection.json",
-  {}
-);
+// const { data: sidebarList } = await useFetch(
+//   "http://127.0.0.1:8000/admin/collection.json",
+//   {}
+// );
 const element_selected = useState("toggle_mock_collection");
 const code_res = useState("code_response");
 // const collections = ref(JSON.parse(JSON.stringify(sidebarList.value)));
@@ -91,7 +91,7 @@ const fakeData = [
         updated_at: "2023-04-22T02:38:24.451+07:00",
       },
     ],
-    is_server: true,
+    is_server: 0,
     variable: "",
     created_at: "2023-04-22T02:34:49.166+07:00",
     updated_at: "2023-04-22T02:34:49.166+07:00",
