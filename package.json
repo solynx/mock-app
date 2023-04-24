@@ -1,13 +1,14 @@
 {
   "private": true,
   "scripts": {
+    "deploy": "nuxt generate && gh-pages -d dist",
     "build": "nuxt build",
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "predeploy": "nuxt generate",
-"deploy": "gh-pages -d dist"
+    "predeploy": "nuxt generate"
+   
   },
   "overrides": {
     "vue": "latest"
