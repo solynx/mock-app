@@ -4,7 +4,7 @@
     "dev": "nuxt",
     "generate": "nuxt generate",
     "start": "nuxt start",
-    "deploy": "push-dir --dir=dist --branch=gh-pages"
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "overrides": {
     "vue": "latest"
