@@ -1,0 +1,1 @@
+import{p as n,a as c,bJ as t,o as a,b as s,bm as r,bq as l}from"./entry.07c037bb.js";const d=n({setup(){return{code:'console.log("Hello World")'}}});function p(e,i,u,_,m,f){const o=t("n-code");return a(),s("div",null,[r(" JavaScript "),l(o,{code:e.code,language:"javascript",inline:""},null,8,["code"])])}const v=c(d,[["render",p]]);export{v as default};
