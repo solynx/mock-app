@@ -566,7 +566,7 @@ const newCollection = async () => {
     requests: [],
     variable: "",
   };
-  const url = "http://127.0.0.1:8000/admin/collection.json";
+  const url = "https://mock-app-2h5z.onrender.com/admin/collection.json";
   let result: object;
   await axios
     .post(url, collection)
@@ -578,7 +578,7 @@ const newCollection = async () => {
     });
 
   // const { data: status } = await useFetch(
-  //   "http://127.0.0.1:8000/admin/collection.json",
+  //   "https://mock-app-2h5z.onrender.com/admin/collection.json",
   //   {
   //     method: "POST",
   //     headers: { "Content-type": "application/json" },
@@ -596,7 +596,7 @@ const newCollection = async () => {
 };
 const deleteCollection = async (collection: object, index: number) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/collection.json",
+    "https://mock-app-2h5z.onrender.com/admin/collection.json",
     {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
@@ -618,7 +618,7 @@ const saveNameCollection = async (el: object, new_name: string) => {
     name: new_name,
   };
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/collection.json",
+    "https://mock-app-2h5z.onrender.com/admin/collection.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -697,7 +697,7 @@ const addRequest = async (collection: object, folder?: object) => {
 const addRequestFetch = async (request: object) => {
   let result;
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/request.json",
+    "https://mock-app-2h5z.onrender.com/admin/request.json",
     {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -736,7 +736,7 @@ const saveNameFolder = async (oldFolder: Object, new_name: string) => {
     name: new_name,
   };
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/folder.json",
+    "https://mock-app-2h5z.onrender.com/admin/folder.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -758,7 +758,7 @@ const deleteFolder = async (
   index: number
 ) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/folder.json",
+    "https://mock-app-2h5z.onrender.com/admin/folder.json",
     {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
@@ -783,7 +783,7 @@ const newFolder = async (collection: object) => {
     requests: [],
   };
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/folder.json",
+    "https://mock-app-2h5z.onrender.com/admin/folder.json",
     {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -802,7 +802,7 @@ const newFolder = async (collection: object) => {
 //Request
 const saveNameRequest = async (request: object, new_name: string) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/request.json",
+    "https://mock-app-2h5z.onrender.com/admin/request.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -826,7 +826,7 @@ const deleteRequest = async (
   index: number
 ) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/request.json",
+    "https://mock-app-2h5z.onrender.com/admin/request.json",
     {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
@@ -854,7 +854,7 @@ const addResponse = async (request: object) => {
   };
 
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/response.json",
+    "https://mock-app-2h5z.onrender.com/admin/response.json",
     {
       method: "POST",
       headers: { "Content-type": "application/json" },
@@ -875,7 +875,7 @@ const deleteResponse = async (
   index: number
 ) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/response.json",
+    "https://mock-app-2h5z.onrender.com/admin/response.json",
     {
       method: "DELETE",
       headers: { "Content-type": "application/json" },
@@ -892,7 +892,7 @@ const deleteResponse = async (
 };
 const editResponse = async (response: object, new_name: string) => {
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/response.json",
+    "https://mock-app-2h5z.onrender.com/admin/response.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -1055,7 +1055,7 @@ const downloadJSON = (data: object, name: string) => {
 };
 const dowloadFile = async () => {
   const { data } = await useFetch(
-    "http://127.0.0.1:8000/admin/format-collection.json",
+    "https://mock-app-2h5z.onrender.com/admin/format-collection.json",
     {
       method: "POST",
 
@@ -1132,7 +1132,7 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
 
   collection_copy.name = collection_import.info.name;
   console.log(collection_import);
-  await useFetch("http://127.0.0.1:8000/admin/collection.json", {
+  await useFetch("https://mock-app-2h5z.onrender.com/admin/collection.json", {
     method: "POST",
 
     headers: { "Content-type": "application/json" },
@@ -1148,7 +1148,7 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
           collection_id: collection_copy.id,
         };
         const { data } = await useFetch(
-          "http://127.0.0.1:8000/admin/folder.json",
+          "https://mock-app-2h5z.onrender.com/admin/folder.json",
           {
             method: "POST",
 
@@ -1182,12 +1182,15 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
             const base64QueryString = btoa(jsonString);
             request.query = base64QueryString;
           }
-          await useFetch("http://127.0.0.1:8000/admin/request.json", {
-            method: "POST",
+          await useFetch(
+            "https://mock-app-2h5z.onrender.com/admin/request.json",
+            {
+              method: "POST",
 
-            headers: { "Content-type": "application/json" },
-            body: JSON.stringify(request),
-          });
+              headers: { "Content-type": "application/json" },
+              body: JSON.stringify(request),
+            }
+          );
           let responses;
 
           if ((responses = req.response)) {
@@ -1202,12 +1205,15 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
                 request_id: request.id,
                 body: res.body,
               };
-              await useFetch("http://127.0.0.1:8000/admin/response.json", {
-                method: "POST",
+              await useFetch(
+                "https://mock-app-2h5z.onrender.com/admin/response.json",
+                {
+                  method: "POST",
 
-                headers: { "Content-type": "application/json" },
-                body: JSON.stringify(response),
-              });
+                  headers: { "Content-type": "application/json" },
+                  body: JSON.stringify(response),
+                }
+              );
               request.responses.push(response);
             });
           }
@@ -1254,12 +1260,15 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
             request.query = base64QueryString;
           }
         }
-        await useFetch("http://127.0.0.1:8000/admin/request.json", {
-          method: "POST",
+        await useFetch(
+          "https://mock-app-2h5z.onrender.com/admin/request.json",
+          {
+            method: "POST",
 
-          headers: { "Content-type": "application/json" },
-          body: JSON.stringify(request),
-        });
+            headers: { "Content-type": "application/json" },
+            body: JSON.stringify(request),
+          }
+        );
         if (item.response) {
           item.response.forEach((res) => {
             const response = {

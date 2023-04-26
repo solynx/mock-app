@@ -189,7 +189,7 @@ const getRequest = async (request_detail: object) => {
   props.item.query = base64String;
 
   const { data: result1 } = await useFetch(
-    "http://localhost:8000/admin/request.json",
+    "https://mock-app-2h5z.onrender.com/admin/request.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -246,7 +246,7 @@ const updateResponseBody = async (response: object) => {
   disabledRef.value = false;
   let result;
   const { data: status } = await useFetch(
-    "http://localhost:8000/admin/response.json",
+    "https://mock-app-2h5z.onrender.com/admin/response.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
@@ -278,7 +278,7 @@ const updateMockApi = async (response: object, path: string) => {
   let result;
   const method = response.method === "GET" ? "POST" : response.method;
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/mock-api/update",
+    "https://mock-app-2h5z.onrender.com/mock-api/update",
     {
       method: method,
       headers: { "Content-type": "application/json" },
@@ -289,7 +289,7 @@ const updateMockApi = async (response: object, path: string) => {
 
   if (result.status) {
     const { data: status } = await useFetch(
-      "http://localhost:8000/admin/response.json",
+      "https://mock-app-2h5z.onrender.com/admin/response.json",
       {
         method: "PATCH",
         headers: { "Content-type": "application/json" },

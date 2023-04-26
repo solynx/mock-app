@@ -1,9 +1,8 @@
 import { defineNuxtConfig } from 'nuxt/config'
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  mode: 'static',
-  router: {
-     base: '/mock-app/'
+  app: {
+    baseURL: '/mock-app/'
   },
   modules: [
     // ...

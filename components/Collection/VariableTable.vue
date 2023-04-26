@@ -124,7 +124,7 @@ const saveVariable = async () => {
   };
   console.log(collection);
   const { data: status } = await useFetch(
-    "http://127.0.0.1:8000/admin/collection.json",
+    "https://mock-app-2h5z.onrender.com/admin/collection.json",
     {
       method: "PATCH",
       headers: { "Content-type": "application/json" },
