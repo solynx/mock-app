@@ -62,8 +62,7 @@ const { data: sidebarList } = await useFetch(
 const element_selected = useState("toggle_mock_collection");
 const code_res = useState("code_response");
 const collections = ref(JSON.parse(JSON.stringify(sidebarList.value)));
-console.log(collections.value);
-// const fakeData = [
+
 //   {
 //     id: "eea31c8d-5b83-44d8-bc79-e2a0e732f335",
 //     name: "alid",
@@ -104,10 +103,10 @@ console.log(collections.value);
 // ];
 // const collections = ref(fakeData);
 const uriStore = useURIStore();
-// const filterServer1 = collections.value.data.filter(
-//   (server) => server.is_server == true
-// );
-// const filterServer = ref(filterServer1);
+const filterServer1 = collections.value.data.filter(
+  (server) => server.is_server == true
+);
+const filterServer = ref(filterServer1);
 const handleSuccess = (url: string) => {
   dialog.success({
     title: "Create Mock Server Success!",
@@ -132,7 +131,7 @@ const getItemSelected = (bread_cum: Array, item: object) => {
   item_link.value = bread_cum;
 
   item_link.value.push({ id: item.id, name: item.name });
-  console.log(item_link.value);
+
   item_select.value = item;
 
   uri_param.value = item.uri_component ?? "";

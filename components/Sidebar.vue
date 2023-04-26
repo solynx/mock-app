@@ -28,7 +28,7 @@
       </ul>
 
       <div class="flex">
-        <n-upload @finish="handleFinish" action="" ref="uploadRef">
+        <n-upload @change="handleFinish" ref="uploadRef">
           <n-button size="small" :default-upload="false" tertiary
             >Import</n-button
           >
@@ -666,7 +666,7 @@ const addRequest = async (collection: object, folder?: object) => {
       header: "",
     };
     const result: object = await addRequestFetch(request1);
-    console.log(result);
+   
     if (result.status) {
       folder.requests.push(request1);
       return message.success("Success!");
@@ -723,7 +723,7 @@ const saveName = (
   editingIndex.value = -1;
   el.name = new_name;
   name = null;
-  console.log(new_name);
+  
 };
 
 const handleBlur = () => {
@@ -927,7 +927,7 @@ const getItemSelected = (bread_cum: Array, item: object) => {
     convert_param_table.value = JSON.parse(decodedJson);
 
     param_table.value = [];
-    console.log(convert_param_table.value);
+  
     convert_param_table.value.forEach((item) => {
       let new_var = {
         key: param_table.value.length + 1,
@@ -1117,6 +1117,7 @@ const handleFinish = ({
   });
 };
 const addCollectionWithJsonFile = async (collection_import: object) => {
+
   const collection_copy = {
     id: uuidv4(),
     name: "",
@@ -1124,14 +1125,14 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
     requests: [],
     variable: "",
   };
-  if (collection_import.variable.length) {
+  if (collection_import.variable) {
     const jsonString = JSON.stringify(collection_import.variable);
     const base64String = btoa(jsonString);
     collection_copy.variable = base64String;
   }
 
   collection_copy.name = collection_import.info.name;
-  console.log(collection_import);
+
   await useFetch("https://mock-app-2h5z.onrender.com/admin/collection.json", {
     method: "POST",
 
@@ -1218,11 +1219,11 @@ const addCollectionWithJsonFile = async (collection_import: object) => {
             });
           }
           folder.requests.push(request);
-          console.log(folder);
+        
         });
         collection_copy.folders.push(folder);
       } else {
-        console.log(item);
+      
         const request = {
           id: uuidv4(),
           name: item.name,

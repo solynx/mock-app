@@ -152,6 +152,7 @@ const createColumns = (): DataTableColumns<RowData> => [
         onUpdateValue(v) {
           data.value[index].url = v;
         },
+        placeholder: "ex: localhost:8000/api/...",
       });
     },
   },
@@ -173,6 +174,7 @@ const createColumns = (): DataTableColumns<RowData> => [
     render(row, index) {
       return h(NInput, {
         value: row.response_body,
+        type: "textarea",
         onUpdateValue(v) {
           data.value[index].response_body = v;
         },
@@ -188,7 +190,7 @@ const changeStep = () => {
     step_toggle.value == "mock_name" ? "select_collection" : "mock_name";
 };
 const createMockServer = () => {
-  if (/^api\//.test(data.value[0].url)) {
+  if (/^localhost:8000\//.test(data.value[0].url)) {
     const url = new URL("http://" + data.value[0].url);
     const path = url.pathname;
     data.value[0].url = path;
