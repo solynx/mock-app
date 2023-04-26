@@ -28,7 +28,7 @@
       </ul>
 
       <div class="flex">
-        <n-upload @finish="handleFinish" action="google.com" ref="uploadRef">
+        <n-upload @finish="handleFinish" action="" ref="uploadRef">
           <n-button size="small" :default-upload="false" tertiary
             >Import</n-button
           >

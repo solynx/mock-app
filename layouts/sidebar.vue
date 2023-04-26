@@ -53,11 +53,16 @@ const dialog = useDialog();
 const placement = "bottom-right";
 const { data: sidebarList } = await useFetch(
   "https://mock-app-2h5z.onrender.com/admin/collection.json",
-  {}
+  {
+    method: "GET",
+
+    headers: { "Content-type": "application/json" },
+  }
 );
 const element_selected = useState("toggle_mock_collection");
 const code_res = useState("code_response");
 const collections = ref(JSON.parse(JSON.stringify(sidebarList.value)));
+console.log(collections.value);
 // const fakeData = [
 //   {
 //     id: "eea31c8d-5b83-44d8-bc79-e2a0e732f335",
