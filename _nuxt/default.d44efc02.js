@@ -1,1 +1,0 @@
-import{a as t,o as a,b as o,bj as r,aR as s}from"./entry.f66f6f67.js";const c={};function l(e,n){return a(),o("div",null,[r(" A *default* layout "),s(e.$slots,"default")])}const f=t(c,[["render",l]]);export{f as default};
